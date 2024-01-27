@@ -34,7 +34,7 @@ class ContactForm extends Component {
   }
 
   render() {
-    const { contacts, name } = this.state;
+    const { number, name } = this.state;
     const { nameInputId, numberInputId, handleSubmit, handleChange } = this;
 
     return (
@@ -48,9 +48,6 @@ class ContactForm extends Component {
             id={nameInputId}
             onChange={handleChange}
             placeholder="Name"
-            pattern="^[a-zA-Zа-яА-Я]+(([' \-][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
-            title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
-            autoComplete="on"
             required
           />
         </div>
@@ -60,13 +57,10 @@ class ContactForm extends Component {
           <input
             type="tel"
             name="number"
-            value={contacts}
+            value={number}
             id={numberInputId}
             onChange={handleChange}
             placeholder="Number"
-            pattern="/\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}/"
-            title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
-            autoComplete="on"
             required
           />
         </div>
